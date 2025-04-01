@@ -1,105 +1,48 @@
 <template>
-  <div class="landing-page">
-    <header>
-      <h1>Bienvenido a Mi Landing Page</h1>
-      <p>Esta es una página de aterrizaje simple creada con Vue y Vite.</p>
-    </header>
+  <div>
+    <!-- Barra de navegación -->
+    <NavBar />
 
-    <section class="features">
-      <h2>Características</h2>
-      <ul>
-        <li>Rápida y ligera</li>
-        <li>Fácil de personalizar</li>
-        <li>Diseño responsivo</li>
-      </ul>
-    </section>
+    <!-- Encabezado -->
+    <Header />
 
-    <section class="cta">
-      <h2>¿Listo para empezar?</h2>
-      <button @click="showAlert">¡Regístrate Ahora!</button>
-    </section>
+    <!-- Secciones agrupadas -->
+    <Sections />
+
+    <!-- Pie de página -->
+    <Footer />
   </div>
 </template>
 
 <script>
+import NavBar from './components/NavBar.vue';
+import Header from './components/Header.vue';
+import Sections from './components/Sections.vue'; // Importa el nuevo componente
+import Footer from './components/Footer.vue';
+
 export default {
-  methods: {
-    showAlert() {
-      alert('¡Gracias por registrarte!');
-    }
+  components: {
+    NavBar,
+    Header,
+    Sections, // Registra el componente
+    Footer
   }
 }
 </script>
 
 <style>
+/* Estilos globales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  line-height: 1.6;
 }
 
-.landing-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
-header {
-  margin-bottom: 40px;
-}
-
-header h1 {
-  font-size: 2.5em;
-  color: #333;
-}
-
-header p {
-  font-size: 1.2em;
-  color: #666;
-}
-
-.features {
-  margin-bottom: 40px;
-}
-
-.features h2 {
-  font-size: 2em;
-  color: #333;
-}
-
-.features ul {
-  list-style-type: none;
+#app {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
   padding: 0;
-}
-
-.features li {
-  font-size: 1.1em;
-  color: #555;
-  margin: 10px 0;
-}
-
-.cta {
-  margin-bottom: 40px;
-}
-
-.cta h2 {
-  font-size: 2em;
-  color: #333;
-}
-
-.cta button {
-  padding: 10px 20px;
-  font-size: 1.2em;
-  color: #fff;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.cta button:hover {
-  background-color: #0056b3;
 }
 </style>
